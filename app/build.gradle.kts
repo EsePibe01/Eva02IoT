@@ -1,18 +1,18 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    // El plugin de Google Services (sin apply false aquí)
+    alias(libs.plugins.google.services)
 }
 
 android {
     namespace = "com.example.creacion"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.creacion"
         minSdk = 24
-        targetSdk = 36
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -44,11 +44,10 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
-    // --- AGREGAR ESTAS LÍNEAS PARA FIREBASE ---
+    // --- FIREBASE ---
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
     implementation(libs.firebase.firestore)
-    // ------------------------------------------
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
