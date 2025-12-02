@@ -1,31 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutBienvenida"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@android:color/white"
+    android:background="@drawable/bg_bienvenida"
     android:padding="24dp">
 
+    <!-- ICONO DE LA APP -->
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@mipmap/ic_launcher"
-        android:layout_marginBottom="16dp"
-        android:contentDescription="Logo" />
+        android:id="@+id/imgLogo"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:src="@mipmap/gokuicon"
+        android:contentDescription="Logo de la app"
+        android:layout_marginBottom="24dp"/>
 
+    <!-- NOMBRE DE LA APP -->
     <TextView
+        android:id="@+id/tvNombreApp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="¡Bienvenido a CREACION!"
-        android:textSize="18sp"
+        android:text="CREACIÓN"
+        android:textSize="30sp"
         android:textStyle="bold"
-        android:layout_marginBottom="8dp" />
+        android:textColor="#1A237E"
+        android:layout_marginBottom="8dp"/>
 
+    <!-- SUBTÍTULO -->
     <TextView
+        android:id="@+id/tvSubtitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tu aplicación Android de ejemplo"
-        android:textSize="14sp" />
+        android:text="Bienvenido a la aplicación"
+        android:textSize="16sp"
+        android:textColor="#455A64"/>
+
 </LinearLayout>
+
+
+
+
 

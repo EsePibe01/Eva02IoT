@@ -3,32 +3,39 @@ package com.example.creacion
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import androidx.appcompat.app.AlertDialog
+import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class InicioActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inicio)
 
+        val edtUsuario = findViewById<EditText>(R.id.edtUsuario)
+        val edtPassword = findViewById<EditText>(R.id.edtPassword)
         val btnLogin = findViewById<Button>(R.id.btnLogin)
-        val btnRecuperar = findViewById<Button>(R.id.btnRecuperar)
-        val btnRegistrar = findViewById<Button>(R.id.btnRegistrar)
+        val btnGoRegistrar = findViewById<Button>(R.id.btnGoRegistrar)
+        val btnGoRecuperar = findViewById<Button>(R.id.btnGoRecuperar)
 
         btnLogin.setOnClickListener {
-            AlertDialog.Builder(this)
-                .setTitle("Iniciar Sesión")
-                .setMessage("Simulación de inicio de sesión exitosa")
-                .setPositiveButton("OK", null)
-                .show()
+            if (edtUsuario.text.isBlank() || edtPassword.text.isBlank()) {
+                Toast.makeText(this, "Complete los campos", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            Toast.makeText(this, "Inicio de sesión exitoso (simulado)", Toast.LENGTH_SHORT).show()
+            // Aquí podrías iniciar MainActivity si la usaras
         }
 
-        btnRecuperar.setOnClickListener {
-            startActivity(Intent(this, RecuperarClaveActivity::class.java))
-        }
-
-        btnRegistrar.setOnClickListener {
+        btnGoRegistrar.setOnClickListener {
             startActivity(Intent(this, RegistrarCuentaActivity::class.java))
+        }
+
+        btnGoRecuperar.setOnClickListener {
+            startActivity(Intent(this, RecuperarClaveActivity::class.java))
         }
     }
 }
+
