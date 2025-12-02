@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "318945543334",
+    "project_id": "creatura-5e2c7",
+    "storage_bucket": "creatura-5e2c7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318945543334:android:6bc42bdac10623e43e6067",
+        "android_client_info": {
+          "package_name": "com.example.creacion"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTRUaS_JEup9E_7gYzPex9eLmtwZe0MeQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
