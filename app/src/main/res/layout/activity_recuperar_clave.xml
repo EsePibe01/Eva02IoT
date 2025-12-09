@@ -13,7 +13,6 @@
         android:orientation="vertical"
         android:padding="24dp">
 
-        <!-- LOGO DE GOKU -->
         <ImageView
             android:id="@+id/imgLogoRec"
             android:layout_width="120dp"
@@ -22,7 +21,6 @@
             android:contentDescription="Logo Goku"
             android:layout_marginBottom="16dp"/>
 
-        <!-- TÍTULO -->
         <TextView
             android:id="@+id/tvTituloRecuperar"
             android:layout_width="wrap_content"
@@ -33,44 +31,16 @@
             android:textColor="#7C4DFF"
             android:layout_marginBottom="20dp"/>
 
-        <!-- CAMPOS DE TEXTO -->
-        <EditText
-            android:id="@+id/edtNombreRec"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nombre"
-            android:background="#FFFFFF"
-            android:padding="14dp"/>
-
-        <EditText
-            android:id="@+id/edtApellidoRec"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Apellido"
-            android:background="#FFFFFF"
-            android:padding="14dp"
-            android:layout_marginTop="10dp"/>
-
         <EditText
             android:id="@+id/edtCorreoRec"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Correo"
+            android:hint="Correo Electrónico"
             android:inputType="textEmailAddress"
             android:background="#FFFFFF"
             android:padding="14dp"
             android:layout_marginTop="10dp"/>
 
-        <EditText
-            android:id="@+id/edtRutRec"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="RUT"
-            android:background="#FFFFFF"
-            android:padding="14dp"
-            android:layout_marginTop="10dp"/>
-
-        <!-- BOTÓN RECUPERAR -->
         <Button
             android:id="@+id/btnRecuperar"
             android:layout_width="match_parent"
@@ -80,7 +50,6 @@
             android:backgroundTint="#5E35B1"
             android:layout_marginTop="20dp"/>
 
-        <!-- BOTÓN VOLVER -->
         <Button
             android:id="@+id/btnVolverInicio"
             android:layout_width="match_parent"
@@ -92,4 +61,3 @@
 
     </LinearLayout>
 </ScrollView>
-
