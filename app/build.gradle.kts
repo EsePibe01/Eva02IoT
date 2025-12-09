@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     // El plugin de Google Services (sin apply false aquí)
     alias(libs.plugins.google.services)
+    id("kotlin-parcelize")
 }
 
 android {

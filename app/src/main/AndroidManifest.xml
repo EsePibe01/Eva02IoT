@@ -21,6 +21,10 @@
             android:exported="false" />
 
         <activity
+            android:name=".AgregarNoticiaActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".BienvenidaActivity"
             android:exported="true">
             <intent-filter>
