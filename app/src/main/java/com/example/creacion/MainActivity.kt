@@ -7,17 +7,23 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth // Importar Firebase Auth
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var auth: FirebaseAuth // Declarar FirebaseAuth
     // REMOVIDO: private val noticias = mutableListOf<String>() // Lista simulada de noticias
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Inicializar Firebase Auth
+        auth = FirebaseAuth.getInstance() // Inicializar
+
         val btnVerNoticias = findViewById<Button>(R.id.btnVerNoticias)
         val btnAgregarNoticia = findViewById<Button>(R.id.btnAgregarNoticia)
+        val btnLogout = findViewById<Button>(R.id.btnLogout) // Vincular el nuevo botón
 
         // --- BOTÓN VER NOTICIAS ---
         // Simulación: En un escenario real, este botón debería lanzar una actividad con un RecyclerView
@@ -30,6 +36,21 @@ class MainActivity : AppCompatActivity() {
         btnAgregarNoticia.setOnClickListener {
             // Ahora navega a la nueva Activity dedicada para agregar noticias (el "new page")
             startActivity(Intent(this, AgregarNoticiaActivity::class.java))
+        }
+
+        // --- BOTÓN CERRAR SESIÓN ---
+        btnLogout.setOnClickListener {
+            auth.signOut() // Cierra la sesión de Firebase
+
+            // Navegar a la pantalla de inicio (InicioActivity)
+            val intent = Intent(this, InicioActivity::class.java).apply {
+                // Estas banderas aseguran que todas las actividades anteriores sean borradas
+                // y que InicioActivity sea la única en la pila.
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            }
+            startActivity(intent)
+            Toast.makeText(this, "Sesión cerrada con éxito", Toast.LENGTH_SHORT).show()
+            finish() // Cierra MainActivity para que el usuario no pueda volver con el botón "back"
         }
     }
 

@@ -13,7 +13,6 @@
         android:gravity="center"
         android:padding="24dp">
 
-        <!-- LOGO DE GOKU -->
         <ImageView
             android:id="@+id/imgLogoMain"
             android:layout_width="120dp"
@@ -22,7 +21,6 @@
             android:contentDescription="Logo Goku"
             android:layout_marginBottom="16dp"/>
 
-        <!-- TÍTULO -->
         <TextView
             android:id="@+id/tvTituloMain"
             android:layout_width="wrap_content"
@@ -33,7 +31,6 @@
             android:textColor="#7C4DFF"
             android:layout_marginBottom="20dp"/>
 
-        <!-- BOTONES -->
         <Button
             android:id="@+id/btnVerNoticias"
             android:layout_width="match_parent"
@@ -50,6 +47,15 @@
             android:text="Agregar Noticia"
             android:textColor="#FFFFFF"
             android:backgroundTint="#5E35B1"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CERRAR SESIÓN"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#7C4DFF"
             android:layout_marginTop="10dp"/>
 
     </LinearLayout>
